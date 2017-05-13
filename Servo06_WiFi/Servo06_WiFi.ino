@@ -172,13 +172,14 @@ int cmd=0;
         }
 
         // Check to see if the client request was "GET /H" or "GET /L":
+        
         if (currentLine.endsWith("GET /1")) cmd=1;
         if (currentLine.endsWith("GET /2")) cmd=2;
-        if (currentLine.endsWith("GET /3"))cmd=3;
-        if (currentLine.endsWith("GET /4"))cmd=4;
-        if (currentLine.endsWith("GET /5"))cmd=5;
-        if (currentLine.endsWith("GET /6"))cmd=6;
-        if (currentLine.endsWith("GET /7"))cmd=7;
+        if (currentLine.endsWith("GET /3")) cmd=3;
+        if (currentLine.endsWith("GET /4")) cmd=4;
+        if (currentLine.endsWith("GET /5")) cmd=5;
+        if (currentLine.endsWith("GET /6")) cmd=6;
+        if (currentLine.endsWith("GET /7")) cmd=7;
       }
     }
     // close the connection:
@@ -187,7 +188,7 @@ int cmd=0;
     int dly=100;
     switch (cmd)
     {
-      case 1: LeftToRight(servoHigh,dly); break;
+      case 1: Serial.println(currentLine); LeftToRight(servoHigh,dly); break;
       case 2: LeftToRight(servoLow,dly); break;
       case 3: RightToLeft(servoHigh,dly); break;
       case 4: RightToLeft(servoLow,dly); break;
